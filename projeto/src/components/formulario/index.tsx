@@ -13,7 +13,7 @@ function Formulario({ setTarefas }: Props) {
   const [tempo, setTempo] = useState("00:00");
   function adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
     evento.preventDefault();
-    setTarefas(tarefasAntigas => 
+    setTarefas(tarefasAntigas =>
       [
         ...tarefasAntigas,
         {
