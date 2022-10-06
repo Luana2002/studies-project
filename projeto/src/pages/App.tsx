@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Cronometro from '../components/Cronometro';
-import Formulario from '../components/Formulario';
 import Lista from '../components/Lista';
 import { ITarefa } from '../types/tarefa';
 import style from './App.module.scss';
+import Formulario from './../components/formulario/form';
 
 function App() {
   const [tarefas, setTarefas] = useState<ITarefa[]>([]);
@@ -18,10 +18,10 @@ function App() {
   }
 
   function finalizarTarefa() {
-    if(selecionado) {
+    if (selecionado) {
       setSelecionado(undefined);
       setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => {
-        if(tarefa.id === selecionado.id) {
+        if (tarefa.id === selecionado.id) {
           return {
             ...tarefa,
             selecionado: false,
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className={style.AppStyle}>
-      <Formulario setTarefas={setTarefas} />
+      <Formulario />
       <Lista
         tarefas={tarefas}
         selecionaTarefa={selecionaTarefa}

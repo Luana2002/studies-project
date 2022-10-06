@@ -5,7 +5,7 @@ class Botao extends React.Component<{ texto: string }>{
     render() {
         return (
             <button className={style.botao}>
-                {this.props.textocd}
+                {this.props.texto}
             </button>
         )
     }
